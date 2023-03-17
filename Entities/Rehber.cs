@@ -15,6 +15,7 @@ namespace Entities
         public string TelefonNumarasiII { get; set; }
         public string TelefonNumarasiIII { get; set; }
         public string EmailAdres { get; set; }
+        public string WebAdres { get; set; }
         public string Adres { get; set; }
         public string Aciklama { get; set; }
     }
