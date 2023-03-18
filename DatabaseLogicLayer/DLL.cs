@@ -56,7 +56,7 @@ namespace DatabaseLogicLayer
             catch (Exception ex)
             {
 
-                throw;
+                
             }
             finally
             {
