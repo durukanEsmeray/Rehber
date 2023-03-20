@@ -19,15 +19,21 @@ namespace DatabaseLogicLayer
         public DLL()
         {
             // oluşturmuş olduğum nesneleri örnekleyip DatabaseLogicLayer katmanıma yazıyor olacağım.
-            con = new SqlConnection("data source=.; initial catalog =TelefonRehberi; user Id = sa; password=123456;");
+            con = new SqlConnection("data source = DESKTOP-I299EIT\\SQLEXPRESS; initial catalog = TelefonRehberi; user Id = durukan; password = 123456;");
         }
 
         public void BaglantiAyarla()
         {
             if (con.State == System.Data.ConnectionState.Closed)
+            {
                 con.Open();
+            }
+
             else
+            {
                 con.Close();
+            }
+
         }
 
         public int SistemKontrol(Kullanici K)
@@ -35,6 +41,8 @@ namespace DatabaseLogicLayer
             try
             {
                 cmd = new SqlCommand("Select count(*) from Kullanici Where KullaniciAdi = @KullaniciAdi and Sifre = @Sifre", con);
+                cmd.Parameters.Add("@KullaniciAdi", SqlDbType.NVarChar).Value = K.KullaniciAdi;
+                cmd.Parameters.Add("@Sifre", SqlDbType.NVarChar).Value = K.Sifre;
                 BaglantiAyarla();
                 ReturnValues = (int)cmd.ExecuteScalar();
             }
@@ -76,7 +84,7 @@ namespace DatabaseLogicLayer
             catch (Exception ex)
             {
 
-                
+
             }
             finally
             {
@@ -118,7 +126,7 @@ ID = @ID
             {
 
             }
-            finally 
+            finally
             {
                 BaglantiAyarla();
             }
