@@ -328,6 +328,7 @@
             btnSil.TabIndex = 38;
             btnSil.Text = "Kayıt Sil";
             btnSil.UseVisualStyleBackColor = true;
+            btnSil.Click += btnSil_Click;
             // 
             // btnDuzenle
             // 

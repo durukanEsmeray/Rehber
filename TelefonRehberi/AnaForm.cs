@@ -74,5 +74,17 @@ namespace TelefonRehberi
                 MessageBox.Show("Kaydınız güncellenmiştir", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            Guid ID = ((Rehber)lstListe.SelectedItem).ID;
+            BusinessLogicLayer.BLL BLL = new BusinessLogicLayer.BLL();
+            int ReturnValues = BLL.KayitSil(ID);
+            if(ReturnValues > 0)
+            {
+                ListeDoldur();
+                MessageBox.Show("Kaydınız silinmiştir", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
