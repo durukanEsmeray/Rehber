@@ -31,6 +31,7 @@
             groupBox1 = new GroupBox();
             groupBox3 = new GroupBox();
             lstListe = new ListBox();
+            txtYeniTelII = new TextBox();
             groupBox2 = new GroupBox();
             btnYeniKayit = new Button();
             txtYeniAciklama = new TextBox();
@@ -43,7 +44,6 @@
             label6 = new Label();
             txtYeniTelIII = new TextBox();
             label5 = new Label();
-            txtYeniTelII = new TextBox();
             label3 = new Label();
             txtYeniTelI = new TextBox();
             label4 = new Label();
@@ -52,25 +52,25 @@
             txtYeniIsim = new TextBox();
             label1 = new Label();
             groupBox4 = new GroupBox();
-            button3 = new Button();
-            button2 = new Button();
-            textBox10 = new TextBox();
+            btnSil = new Button();
+            btnDuzenle = new Button();
+            txtGuncelAciklama = new TextBox();
             label10 = new Label();
-            textBox11 = new TextBox();
+            txtGuncelAdres = new TextBox();
             label11 = new Label();
-            textBox12 = new TextBox();
+            txtGuncelWebAdres = new TextBox();
             label12 = new Label();
-            textBox13 = new TextBox();
+            txtGuncelEmailAdres = new TextBox();
             label13 = new Label();
-            textBox14 = new TextBox();
+            txtGuncelTelIII = new TextBox();
             label14 = new Label();
-            textBox15 = new TextBox();
+            txtGuncelTelII = new TextBox();
             label15 = new Label();
-            textBox16 = new TextBox();
+            txtGuncelTelI = new TextBox();
             label16 = new Label();
-            textBox17 = new TextBox();
+            txtGuncelSoyisim = new TextBox();
             label17 = new Label();
-            textBox18 = new TextBox();
+            txtGuncelIsim = new TextBox();
             label18 = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -106,6 +106,14 @@
             lstListe.Name = "lstListe";
             lstListe.Size = new Size(256, 544);
             lstListe.TabIndex = 0;
+            lstListe.DoubleClick += lstListe_DoubleClick;
+            // 
+            // txtYeniTelII
+            // 
+            txtYeniTelII.Location = new Point(135, 37);
+            txtYeniTelII.Name = "txtYeniTelII";
+            txtYeniTelII.Size = new Size(125, 27);
+            txtYeniTelII.TabIndex = 7;
             // 
             // groupBox2
             // 
@@ -226,13 +234,6 @@
             label5.TabIndex = 8;
             label5.Text = "Telefon III :";
             // 
-            // txtYeniTelII
-            // 
-            txtYeniTelII.Location = new Point(135, 37);
-            txtYeniTelII.Name = "txtYeniTelII";
-            txtYeniTelII.Size = new Size(125, 27);
-            txtYeniTelII.TabIndex = 7;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -292,25 +293,25 @@
             // 
             // groupBox4
             // 
-            groupBox4.Controls.Add(button3);
-            groupBox4.Controls.Add(button2);
-            groupBox4.Controls.Add(textBox10);
+            groupBox4.Controls.Add(btnSil);
+            groupBox4.Controls.Add(btnDuzenle);
+            groupBox4.Controls.Add(txtGuncelAciklama);
             groupBox4.Controls.Add(label10);
-            groupBox4.Controls.Add(textBox11);
+            groupBox4.Controls.Add(txtGuncelAdres);
             groupBox4.Controls.Add(label11);
-            groupBox4.Controls.Add(textBox12);
+            groupBox4.Controls.Add(txtGuncelWebAdres);
             groupBox4.Controls.Add(label12);
-            groupBox4.Controls.Add(textBox13);
+            groupBox4.Controls.Add(txtGuncelEmailAdres);
             groupBox4.Controls.Add(label13);
-            groupBox4.Controls.Add(textBox14);
+            groupBox4.Controls.Add(txtGuncelTelIII);
             groupBox4.Controls.Add(label14);
-            groupBox4.Controls.Add(textBox15);
+            groupBox4.Controls.Add(txtGuncelTelII);
             groupBox4.Controls.Add(label15);
-            groupBox4.Controls.Add(textBox16);
+            groupBox4.Controls.Add(txtGuncelTelI);
             groupBox4.Controls.Add(label16);
-            groupBox4.Controls.Add(textBox17);
+            groupBox4.Controls.Add(txtGuncelSoyisim);
             groupBox4.Controls.Add(label17);
-            groupBox4.Controls.Add(textBox18);
+            groupBox4.Controls.Add(txtGuncelIsim);
             groupBox4.Controls.Add(label18);
             groupBox4.Location = new Point(288, 292);
             groupBox4.Name = "groupBox4";
@@ -319,31 +320,32 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "Seçili Olan Kaydı Güncelle / Sil";
             // 
-            // button3
+            // btnSil
             // 
-            button3.Location = new Point(390, 228);
-            button3.Name = "button3";
-            button3.Size = new Size(357, 29);
-            button3.TabIndex = 38;
-            button3.Text = "Kayıt Sil";
-            button3.UseVisualStyleBackColor = true;
+            btnSil.Location = new Point(390, 228);
+            btnSil.Name = "btnSil";
+            btnSil.Size = new Size(357, 29);
+            btnSil.TabIndex = 38;
+            btnSil.Text = "Kayıt Sil";
+            btnSil.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnDuzenle
             // 
-            button2.Location = new Point(24, 228);
-            button2.Name = "button2";
-            button2.Size = new Size(360, 29);
-            button2.TabIndex = 37;
-            button2.Text = "Kayıt Düzenle";
-            button2.UseVisualStyleBackColor = true;
+            btnDuzenle.Location = new Point(24, 228);
+            btnDuzenle.Name = "btnDuzenle";
+            btnDuzenle.Size = new Size(360, 29);
+            btnDuzenle.TabIndex = 37;
+            btnDuzenle.Text = "Kayıt Düzenle";
+            btnDuzenle.UseVisualStyleBackColor = true;
+            btnDuzenle.Click += btnDuzenle_Click;
             // 
-            // textBox10
+            // txtGuncelAciklama
             // 
-            textBox10.Location = new Point(24, 163);
-            textBox10.Multiline = true;
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(723, 59);
-            textBox10.TabIndex = 35;
+            txtGuncelAciklama.Location = new Point(24, 163);
+            txtGuncelAciklama.Multiline = true;
+            txtGuncelAciklama.Name = "txtGuncelAciklama";
+            txtGuncelAciklama.Size = new Size(723, 59);
+            txtGuncelAciklama.TabIndex = 35;
             // 
             // label10
             // 
@@ -354,13 +356,13 @@
             label10.TabIndex = 34;
             label10.Text = "Açıklama :";
             // 
-            // textBox11
+            // txtGuncelAdres
             // 
-            textBox11.Location = new Point(622, 64);
-            textBox11.Multiline = true;
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(125, 62);
-            textBox11.TabIndex = 33;
+            txtGuncelAdres.Location = new Point(622, 64);
+            txtGuncelAdres.Multiline = true;
+            txtGuncelAdres.Name = "txtGuncelAdres";
+            txtGuncelAdres.Size = new Size(125, 62);
+            txtGuncelAdres.TabIndex = 33;
             // 
             // label11
             // 
@@ -371,12 +373,12 @@
             label11.TabIndex = 32;
             label11.Text = "Adres :";
             // 
-            // textBox12
+            // txtGuncelWebAdres
             // 
-            textBox12.Location = new Point(622, 23);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(125, 27);
-            textBox12.TabIndex = 31;
+            txtGuncelWebAdres.Location = new Point(622, 23);
+            txtGuncelWebAdres.Name = "txtGuncelWebAdres";
+            txtGuncelWebAdres.Size = new Size(125, 27);
+            txtGuncelWebAdres.TabIndex = 31;
             // 
             // label12
             // 
@@ -387,12 +389,12 @@
             label12.TabIndex = 30;
             label12.Text = "Web Adres :";
             // 
-            // textBox13
+            // txtGuncelEmailAdres
             // 
-            textBox13.Location = new Point(128, 96);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(125, 27);
-            textBox13.TabIndex = 29;
+            txtGuncelEmailAdres.Location = new Point(128, 96);
+            txtGuncelEmailAdres.Name = "txtGuncelEmailAdres";
+            txtGuncelEmailAdres.Size = new Size(125, 27);
+            txtGuncelEmailAdres.TabIndex = 29;
             // 
             // label13
             // 
@@ -403,12 +405,12 @@
             label13.TabIndex = 28;
             label13.Text = "Email Adres :";
             // 
-            // textBox14
+            // txtGuncelTelIII
             // 
-            textBox14.Location = new Point(351, 96);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(125, 27);
-            textBox14.TabIndex = 27;
+            txtGuncelTelIII.Location = new Point(351, 96);
+            txtGuncelTelIII.Name = "txtGuncelTelIII";
+            txtGuncelTelIII.Size = new Size(125, 27);
+            txtGuncelTelIII.TabIndex = 27;
             // 
             // label14
             // 
@@ -419,12 +421,12 @@
             label14.TabIndex = 26;
             label14.Text = "Telefon III :";
             // 
-            // textBox15
+            // txtGuncelTelII
             // 
-            textBox15.Location = new Point(351, 57);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(125, 27);
-            textBox15.TabIndex = 25;
+            txtGuncelTelII.Location = new Point(351, 57);
+            txtGuncelTelII.Name = "txtGuncelTelII";
+            txtGuncelTelII.Size = new Size(125, 27);
+            txtGuncelTelII.TabIndex = 25;
             // 
             // label15
             // 
@@ -435,12 +437,12 @@
             label15.TabIndex = 24;
             label15.Text = "Telefon II :";
             // 
-            // textBox16
+            // txtGuncelTelI
             // 
-            textBox16.Location = new Point(351, 20);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(125, 27);
-            textBox16.TabIndex = 23;
+            txtGuncelTelI.Location = new Point(351, 20);
+            txtGuncelTelI.Name = "txtGuncelTelI";
+            txtGuncelTelI.Size = new Size(125, 27);
+            txtGuncelTelI.TabIndex = 23;
             // 
             // label16
             // 
@@ -451,12 +453,12 @@
             label16.TabIndex = 22;
             label16.Text = "Telefon I :";
             // 
-            // textBox17
+            // txtGuncelSoyisim
             // 
-            textBox17.Location = new Point(128, 57);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(125, 27);
-            textBox17.TabIndex = 21;
+            txtGuncelSoyisim.Location = new Point(128, 57);
+            txtGuncelSoyisim.Name = "txtGuncelSoyisim";
+            txtGuncelSoyisim.Size = new Size(125, 27);
+            txtGuncelSoyisim.TabIndex = 21;
             // 
             // label17
             // 
@@ -467,12 +469,12 @@
             label17.TabIndex = 20;
             label17.Text = "Soysim :";
             // 
-            // textBox18
+            // txtGuncelIsim
             // 
-            textBox18.Location = new Point(128, 19);
-            textBox18.Name = "textBox18";
-            textBox18.Size = new Size(125, 27);
-            textBox18.TabIndex = 19;
+            txtGuncelIsim.Location = new Point(128, 19);
+            txtGuncelIsim.Name = "txtGuncelIsim";
+            txtGuncelIsim.Size = new Size(125, 27);
+            txtGuncelIsim.TabIndex = 19;
             // 
             // label18
             // 
@@ -530,25 +532,25 @@
         private TextBox txtYeniIsim;
         private Label label1;
         private GroupBox groupBox4;
-        private Button button3;
-        private Button button2;
-        private TextBox textBox10;
+        private Button btnSil;
+        private Button btnDuzenle;
+        private TextBox txtGuncelAciklama;
         private Label label10;
-        private TextBox textBox11;
+        private TextBox txtGuncelAdres;
         private Label label11;
-        private TextBox textBox12;
+        private TextBox txtGuncelWebAdres;
         private Label label12;
-        private TextBox textBox13;
+        private TextBox txtGuncelEmailAdres;
         private Label label13;
-        private TextBox textBox14;
+        private TextBox txtGuncelTelIII;
         private Label label14;
-        private TextBox textBox15;
+        private TextBox txtGuncelTelII;
         private Label label15;
-        private TextBox textBox16;
+        private TextBox txtGuncelTelI;
         private Label label16;
-        private TextBox textBox17;
+        private TextBox txtGuncelSoyisim;
         private Label label17;
-        private TextBox textBox18;
+        private TextBox txtGuncelIsim;
         private Label label18;
     }
 }

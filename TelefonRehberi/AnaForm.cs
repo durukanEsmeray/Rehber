@@ -25,6 +25,7 @@ namespace TelefonRehberi
             int ReturnValues = BLL.KayitEkle(txtYeniIsim.Text, txtYeniSoyisim.Text, txtYeniTelI.Text, txtYeniTelII.Text, txtYeniTelIII.Text, txtYeniEmailAdres.Text, txtYeniWebAdres.Text, txtYeniAdres.Text, txtYeniAciklama.Text);
             if (ReturnValues > 0)
             {
+                ListeDoldur();
                 MessageBox.Show("Yeni kayıt eklendi", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -41,6 +42,36 @@ namespace TelefonRehberi
             if (RehberListesi != null && RehberListesi.Count > 0)
             {
                 lstListe.DataSource = RehberListesi;
+            }
+        }
+
+        private void lstListe_DoubleClick(object sender, EventArgs e)
+        {
+            ListBox LST = (ListBox)sender;
+            Rehber SecilenKayit = (Rehber)LST.SelectedItem;
+            if (SecilenKayit != null)
+            {
+                txtGuncelIsim.Text = SecilenKayit.Isim;
+                txtGuncelSoyisim.Text = SecilenKayit.Soyisim;
+                txtGuncelEmailAdres.Text = SecilenKayit.EmailAdres;
+                txtGuncelTelI.Text = SecilenKayit.TelefonNumarasiI;
+                txtGuncelTelII.Text = SecilenKayit.TelefonNumarasiII;
+                txtGuncelTelIII.Text = SecilenKayit.TelefonNumarasiIII;
+                txtGuncelWebAdres.Text = SecilenKayit.WebAdres;
+                txtGuncelAdres.Text = SecilenKayit.Adres;
+                txtGuncelAciklama.Text = SecilenKayit.Aciklama;
+            }
+        }
+
+        private void btnDuzenle_Click(object sender, EventArgs e)
+        {
+            Guid ID = ((Rehber)lstListe.SelectedItem).ID;
+            BusinessLogicLayer.BLL BLL = new BusinessLogicLayer.BLL();
+            int ReturnValues = BLL.KayitDuzenle(ID, txtGuncelIsim.Text, txtGuncelSoyisim.Text, txtGuncelTelI.Text, txtGuncelTelII.Text, txtGuncelTelIII.Text, txtGuncelEmailAdres.Text, txtGuncelWebAdres.Text, txtGuncelAdres.Text, txtGuncelAciklama.Text);
+            if (ReturnValues > 0)
+            {
+                ListeDoldur();
+                MessageBox.Show("Kaydınız güncellenmiştir", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
