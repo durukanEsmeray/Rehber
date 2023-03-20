@@ -81,9 +81,10 @@
             // 
             groupBox1.Controls.Add(groupBox3);
             groupBox1.Controls.Add(lstListe);
+            groupBox1.Controls.Add(txtYeniTelII);
             groupBox1.Location = new Point(6, 8);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(276, 502);
+            groupBox1.Size = new Size(276, 571);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Liste";
@@ -103,7 +104,7 @@
             lstListe.ItemHeight = 20;
             lstListe.Location = new Point(14, 27);
             lstListe.Name = "lstListe";
-            lstListe.Size = new Size(256, 464);
+            lstListe.Size = new Size(256, 544);
             lstListe.TabIndex = 0;
             // 
             // groupBox2
@@ -119,7 +120,6 @@
             groupBox2.Controls.Add(label6);
             groupBox2.Controls.Add(txtYeniTelIII);
             groupBox2.Controls.Add(label5);
-            groupBox2.Controls.Add(txtYeniTelII);
             groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(txtYeniTelI);
             groupBox2.Controls.Add(label4);
@@ -228,7 +228,7 @@
             // 
             // txtYeniTelII
             // 
-            txtYeniTelII.Location = new Point(341, 64);
+            txtYeniTelII.Location = new Point(135, 37);
             txtYeniTelII.Name = "txtYeniTelII";
             txtYeniTelII.Size = new Size(125, 27);
             txtYeniTelII.TabIndex = 7;
@@ -494,7 +494,9 @@
             Name = "AnaForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Telefon Rehberi Uygulaması";
+            Load += AnaForm_Load;
             groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox4.ResumeLayout(false);

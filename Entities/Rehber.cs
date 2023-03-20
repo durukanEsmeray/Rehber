@@ -18,5 +18,10 @@ namespace Entities
         public string WebAdres { get; set; }
         public string Adres { get; set; }
         public string Aciklama { get; set; }
+
+        public override string ToString() // bu kısmı yazmazsam entities.rehber olarak görünecek. isim ve soyisim i ezmem gerekti.
+        {
+            return string.Format("{0} {1}", Isim, Soyisim);
+        }
     }
 }
