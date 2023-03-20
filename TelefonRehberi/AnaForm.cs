@@ -16,5 +16,15 @@ namespace TelefonRehberi
         {
             InitializeComponent();
         }
+
+        private void btnYeniKayit_Click(object sender, EventArgs e)
+        {
+            BusinessLogicLayer.BLL BLL = new BusinessLogicLayer.BLL();
+           int ReturnValues = BLL.KayitEkle(txtYeniIsim.Text, txtYeniSoyisim.Text, txtYeniTelI.Text, txtYeniTelII.Text, txtYeniTelIII.Text, txtYeniEmailAdres.Text, txtYeniWebAdres.Text, txtYeniAdres.Text, txtYeniAciklama.Text);
+            if(ReturnValues > 0)
+            {
+                MessageBox.Show("Yeni kayıt eklendi","Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

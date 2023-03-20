@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
             pictureBox1 = new PictureBox();
-            label1 = new Label();
-            txtKullaniciAdi = new TextBox();
+            groupBox2 = new GroupBox();
+            btnGiris = new Button();
             txtSifre = new TextBox();
             label2 = new Label();
-            btnGiris = new Button();
+            txtKullaniciAdi = new TextBox();
+            label1 = new Label();
             groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -50,6 +50,17 @@
             groupBox1.Size = new Size(199, 266);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(3, 23);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(193, 240);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // groupBox2
             // 
@@ -65,37 +76,21 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Kullanıcı Giriş Bilgileri";
             // 
-            // pictureBox1
+            // btnGiris
             // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 23);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(193, 240);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(17, 32);
-            label1.Name = "label1";
-            label1.Size = new Size(99, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Kullanıcı Adı :";
-            // 
-            // txtKullaniciAdi
-            // 
-            txtKullaniciAdi.Location = new Point(122, 29);
-            txtKullaniciAdi.Name = "txtKullaniciAdi";
-            txtKullaniciAdi.Size = new Size(201, 27);
-            txtKullaniciAdi.TabIndex = 1;
+            btnGiris.Location = new Point(22, 96);
+            btnGiris.Name = "btnGiris";
+            btnGiris.Size = new Size(301, 29);
+            btnGiris.TabIndex = 4;
+            btnGiris.Text = "Sistem Giriş";
+            btnGiris.UseVisualStyleBackColor = true;
+            btnGiris.Click += btnGiris_Click;
             // 
             // txtSifre
             // 
             txtSifre.Location = new Point(122, 61);
             txtSifre.Name = "txtSifre";
+            txtSifre.PasswordChar = '*';
             txtSifre.Size = new Size(201, 27);
             txtSifre.TabIndex = 3;
             // 
@@ -108,15 +103,21 @@
             label2.TabIndex = 2;
             label2.Text = "Şifre :";
             // 
-            // btnGiris
+            // txtKullaniciAdi
             // 
-            btnGiris.Location = new Point(22, 96);
-            btnGiris.Name = "btnGiris";
-            btnGiris.Size = new Size(301, 29);
-            btnGiris.TabIndex = 4;
-            btnGiris.Text = "Sistem Giriş";
-            btnGiris.UseVisualStyleBackColor = true;
-            btnGiris.Click += btnGiris_Click;
+            txtKullaniciAdi.Location = new Point(122, 29);
+            txtKullaniciAdi.Name = "txtKullaniciAdi";
+            txtKullaniciAdi.Size = new Size(201, 27);
+            txtKullaniciAdi.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(17, 32);
+            label1.Name = "label1";
+            label1.Size = new Size(99, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Kullanıcı Adı :";
             // 
             // Form1
             // 
@@ -128,11 +129,10 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Kullanıcı Giriş Ekranı";
-           // Load += Form1_Load;
             groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
